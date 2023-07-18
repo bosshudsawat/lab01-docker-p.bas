@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  node-3:
+    container_name: node-3
+    build: .
+    ports:
+      - 3002:3000
+    networks:
+      - inbound
+networks:
+  inbound:
+    external: true
+    driver: bridge
+    name: project-1_inbound
+  outbound:
+    external: true
+    name: outbound
