@@ -7,6 +7,7 @@ services:
       - 3000:3000
     networks:
       - inbound
+      - outbound
   node-2:
     container_name: node-2
     build: ./node-2
@@ -14,9 +15,10 @@ services:
       - 3001:3000
     networks:
       - inbound
+      - outbound
 networks:
   inbound:
-    external: true
+    # external: true
     driver: bridge
     name: project-1_inbound
   outbound:

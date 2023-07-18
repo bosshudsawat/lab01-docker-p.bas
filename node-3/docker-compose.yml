@@ -7,9 +7,10 @@ services:
       - 3002:3000
     networks:
       - inbound
+      - outbound
 networks:
   inbound:
-    external: true
+    # external: true
     driver: bridge
     name: project-1_inbound
   outbound:
